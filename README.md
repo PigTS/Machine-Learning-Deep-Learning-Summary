@@ -16,7 +16,7 @@
 #### &#160; &#160; &#160; &#160;<font color=#008B8B size=4>1. Logistic Regression</font>
 
 
-&#160; &#160; &#160; &#160;![image](https://github.com/HuiZhou-xmu/Machine-Learning-Deep-Learning-Summary/raw/master/img/logistic_regression.png)
+&#160; &#160; &#160; &#160;![image](https://github.com/PigTS/Machine-Learning-Deep-Learning-Summary/raw/master/img/logistic_regression.png)
 
 &#160; &#160; &#160; &#160;Logistic Regression是在Linear Regression基础上加了一个logistic函数，这样可以得到一个概率值，从而将回归变成了分类。
 
@@ -36,7 +36,7 @@
 
 &#160; &#160; &#160; &#160;这时，引入logistic函数，如下：
 
-&#160; &#160; &#160; &#160;![image](https://github.com/HuiZhou-xmu/Machine-Learning-Deep-Learning-Summary/raw/master/img/logistic_func.png)
+&#160; &#160; &#160; &#160;![image](https://github.com/PigTS/Machine-Learning-Deep-Learning-Summary/raw/master/img/logistic_func.png)
 
 &#160; &#160; &#160; &#160;优点如下：
 
@@ -80,7 +80,7 @@
 
 &#160; &#160; &#160; &#160;如下图，当k取3时，结果为红色三角形，而当k取5时，结果为蓝色正方形。
 
-&#160; &#160; &#160; &#160;![image](https://github.com/HuiZhou-xmu/Machine-Learning-Deep-Learning-Summary/raw/master/img/KNN-k.png)
+&#160; &#160; &#160; &#160;![image](https://github.com/PigTS/Machine-Learning-Deep-Learning-Summary/raw/master/img/KNN-k.png)
 
 &#160; &#160; &#160; &#160;k值设置过小会降低分类精度，设置过大且测试样本属于训练集中包含数据较少的类，则会增加噪声，降低分类效果。
 
@@ -104,7 +104,7 @@
 
 &#160; &#160; &#160; &#160;SSE下降速度突然变得平缓的拐点即认为是最佳的k值，如下图所示：
 
-&#160; &#160; &#160; &#160;![image](https://github.com/HuiZhou-xmu/Machine-Learning-Deep-Learning-Summary/raw/master/img/kmeans-elbow.jpg)
+&#160; &#160; &#160; &#160;![image](https://github.com/PigTS/Machine-Learning-Deep-Learning-Summary/raw/master/img/kmeans-elbow.jpg)
 
 &#160; &#160; &#160; &#160;具体k值选取和轮廓系数法可查看这篇博客：https://blog.csdn.net/qq_15738501/article/details/79036255
 
@@ -134,17 +134,17 @@
 
 &#160; &#160; &#160; &#160;假设样本的特征向量为x，类别标签为y，根据贝叶斯公式，样本属于每个类的条件概率（后验概率）为：
 
-&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;![image](https://github.com/HuiZhou-xmu/Machine-Learning-Deep-Learning-Summary/raw/master/img/bayes_1.png)
+&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;![image](https://github.com/PigTS/Machine-Learning-Deep-Learning-Summary/raw/master/img/bayes_1.png)
 
 &#160; &#160; &#160; &#160;分母p(x)对所有类都是相同的，分类的规则是将样本归到后验概率最大的那个类，不需要计算准确的概率值，只需要知道属于哪个类的概率最大即可，这样可以忽略掉分母。分类器的判别函数为：
 
-&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;![image](https://github.com/HuiZhou-xmu/Machine-Learning-Deep-Learning-Summary/raw/master/img/bayes_2.png)
+&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;![image](https://github.com/PigTS/Machine-Learning-Deep-Learning-Summary/raw/master/img/bayes_2.png)
 
 &#160; &#160; &#160; &#160;在实现贝叶斯分类器时，需要知道每个类的条件概率分布p(x|y)，即先验概率。一般假设样本服从正态分布。训练时确定先验概率分布的参数，一般用最大似然估计，即最大化对数似然函数。
 
 &#160; &#160; &#160; &#160;如果假设特征向量的各个分量之间相互独立，则称为朴素贝叶斯分类器，此时的分类判别函数为：
 
-&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;![image](https://github.com/HuiZhou-xmu/Machine-Learning-Deep-Learning-Summary/raw/master/img/bayes_3.png)
+&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;&#160; &#160; &#160; &#160;![image](https://github.com/PigTS/Machine-Learning-Deep-Learning-Summary/raw/master/img/bayes_3.png)
 
 &#160; &#160; &#160; &#160;实现时可以分为特征分量是离散变量和连续变量两种情况。贝叶斯分分类器是一种生成模型，可以处理多分类问题，是一种非线性模型。
 
@@ -282,7 +282,7 @@
 
 &#160; &#160; &#160; &#160;算法流程如下：
 
-&#160; &#160; &#160; &#160;![image](https://github.com/HuiZhou-xmu/Machine-Learning-Deep-Learning-Summary/raw/master/img/AdaBoost.png)
+&#160; &#160; &#160; &#160;![image](https://github.com/PigTS/Machine-Learning-Deep-Learning-Summary/raw/master/img/AdaBoost.png)
 
 &#160; &#160; &#160; &#160;标准的AdaBoost算法是一种判别模型，只能支持二分类问题。它的改进型可以处理多分类问题。
 
@@ -336,7 +336,7 @@
 
 &#160; &#160; &#160; &#160;ReLU及其变体的总结：
 
-&#160; &#160; &#160; &#160;![image](https://github.com/HuiZhou-xmu/Machine-Learning-Deep-Learning-Summary/raw/master/img/ReLUs.jpeg)
+&#160; &#160; &#160; &#160;![image](https://github.com/PigTS/Machine-Learning-Deep-Learning-Summary/raw/master/img/ReLUs.jpeg)
 
 &#160; &#160; &#160; &#160;PReLU中的ai是根据数据变化的；
 
